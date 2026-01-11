@@ -2,85 +2,85 @@
 
 # 🏢 LNTU_OA
 
-**Enterprise Office Automation System**
+**企业级OA办公自动化系统**
 
 [![Spring MVC](https://img.shields.io/badge/Spring%20MVC-5.3.20-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.5-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-A modern, full-featured Office Automation system built with Spring MVC and Vue 3.
+基于 Spring MVC + Vue 3 构建的现代化企业办公自动化系统
 
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Quick Start](#-quick-start) • [Screenshots](#-screenshots) • [Architecture](#-architecture)
+[功能特性](#-功能特性) • [技术栈](#-技术栈) • [快速开始](#-快速开始) • [项目结构](#-项目结构)
 
 </div>
 
 ---
 
-## ✨ Features
+## ✨ 功能特性
 
 <table>
 <tr>
 <td width="50%">
 
-### 📊 Dashboard & Analytics
-- Real-time statistics overview
-- Interactive charts with ECharts
-- Task & notification center
-- Quick action shortcuts
+### 📊 工作台仪表盘
+- 实时数据统计概览
+- ECharts 交互式图表
+- 待办事项与通知中心
+- 快捷操作入口
 
-### 📅 Meeting Management
-- Room reservation system
-- Meeting scheduling
-- Resource allocation
-- Calendar integration
+### 📅 会议室管理
+- 会议室预约系统
+- 会议日程安排
+- 资源分配管理
+- 日历集成
 
-### 🚗 Vehicle Management
-- Fleet booking system
-- Driver assignment
-- Usage tracking
-- Maintenance records
+### 🚗 车辆管理
+- 车辆预约系统
+- 司机调度分配
+- 用车记录追踪
+- 维护保养记录
 
 </td>
 <td width="50%">
 
-### 📋 Workflow & Approval
-- Custom workflow designer
-- Multi-level approval chains
-- Process tracking
-- Email notifications
+### 📋 流程审批
+- 自定义工作流设计
+- 多级审批链
+- 流程进度追踪
+- 消息通知提醒
 
-### 💰 Finance & Expense
-- Expense claim submission
-- Invoice management
-- Budget tracking
-- Approval workflow
+### 💰 财务报销
+- 费用报销申请
+- 发票管理
+- 预算追踪
+- 审批工作流
 
-### 👥 HR & Attendance
-- Clock in/out system
-- Leave management
-- Overtime requests
-- Attendance reports
+### 👥 考勤管理
+- 打卡签到系统
+- 请假申请管理
+- 加班申请
+- 考勤报表统计
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 📁 Cloud Drive
-- File upload & download
-- Folder management
-- File sharing
-- Storage quota
+### 📁 网盘系统
+- 文件上传下载
+- 文件夹管理
+- 文件分享
+- 存储配额管理
 
 </td>
 <td width="50%">
 
-### 📢 Announcements
-- Company-wide notices
-- Category management
-- Read tracking
-- Priority levels
+### 📢 公告管理
+- 全公司公告发布
+- 分类管理
+- 已读追踪
+- 优先级设置
 
 </td>
 </tr>
@@ -88,44 +88,44 @@ A modern, full-featured Office Automation system built with Spring MVC and Vue 3
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 技术栈
 
-### Backend
-| Technology | Version | Description |
-|------------|---------|-------------|
-| Spring MVC | 5.3.20 | Web framework |
-| MyBatis-Plus | 3.5.3 | ORM framework |
-| MySQL | 8.0 | Database |
-| JWT | - | Authentication |
-| Knife4j | 3.0 | API documentation |
+### 后端技术
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Spring MVC | 5.3.20 | Web框架 |
+| MyBatis-Plus | 3.5.3 | ORM框架 |
+| MySQL | 8.0 | 数据库 |
+| JWT | - | 身份认证 |
+| Knife4j | 3.0 | API文档 |
 
-### Frontend
-| Technology | Version | Description |
-|------------|---------|-------------|
-| Vue.js | 3.5 | Frontend framework |
-| Element Plus | 2.13 | UI component library |
-| Vite | 5.0 | Build tool |
-| ECharts | 6.0 | Data visualization |
-| Axios | - | HTTP client |
+### 前端技术
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Vue.js | 3.5 | 前端框架 |
+| Element Plus | 2.13 | UI组件库 |
+| Vite | 5.0 | 构建工具 |
+| ECharts | 6.0 | 数据可视化 |
+| Axios | - | HTTP客户端 |
 
 ---
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### Prerequisites
+### 环境要求
 
-```bash
+```
 JDK 8+  |  Maven 3.6+  |  Node.js 16+  |  MySQL 8.0+
 ```
 
-### 1️⃣ Clone Repository
+### 1️⃣ 克隆项目
 
 ```bash
 git clone https://github.com/wxx827/lntu_OA.git
 cd lntu_OA
 ```
 
-### 2️⃣ Database Setup
+### 2️⃣ 数据库配置
 
 ```sql
 CREATE DATABASE oa_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -135,38 +135,38 @@ CREATE DATABASE oa_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 mysql -u root -p oa_system < db/init_complete.sql
 ```
 
-### 3️⃣ Backend Configuration
+### 3️⃣ 后端配置
 
 ```bash
 cd oa-backend/src/main/resources
 cp application.yml.example application.yml
 cp jdbc.properties.example jdbc.properties
-# Edit files with your database credentials
+# 编辑配置文件，填入数据库连接信息
 ```
 
-### 4️⃣ Start Services
+### 4️⃣ 启动服务
 
-**Backend:**
+**启动后端：**
 ```bash
 cd oa-backend && mvn tomcat7:run
 ```
 
-**Frontend:**
+**启动前端：**
 ```bash
 cd oa-frontend && npm install && npm run dev
 ```
 
-### 5️⃣ Access Application
+### 5️⃣ 访问系统
 
-| Service | URL |
-|---------|-----|
-| 🌐 Frontend | http://localhost:5173 |
-| 🔧 Backend API | http://localhost:8080/api |
-| 📚 API Docs | http://localhost:8080/doc.html |
+| 服务 | 地址 |
+|------|------|
+| 🌐 前端页面 | http://localhost:5173 |
+| 🔧 后端API | http://localhost:8080/api |
+| 📚 API文档 | http://localhost:8080/doc.html |
 
 ---
 
-## 🐳 Docker Deployment
+## 🐳 Docker 部署
 
 ```bash
 docker-compose up -d
@@ -174,65 +174,47 @@ docker-compose up -d
 
 ---
 
-## 📸 Screenshots
-
-<details>
-<summary><b>Click to expand</b></summary>
-
-| Dashboard | Meeting Room |
-|-----------|--------------|
-| ![Dashboard](docs/img/dashboard.png) | ![Meeting](docs/img/meeting.png) |
-
-| Workflow | Attendance |
-|----------|------------|
-| ![Workflow](docs/img/workflow.png) | ![Attendance](docs/img/attendance.png) |
-
-</details>
-
----
-
-## 🏗 Architecture
+## 🏗 项目结构
 
 ```
 lntu_OA/
-├── oa-backend/                    # Spring MVC Backend
+├── oa-backend/                    # Spring MVC 后端
 │   ├── src/main/java/com/oa/
-│   │   ├── common/                # Utils, Result, Exceptions
-│   │   ├── config/                # CORS, Security, Swagger
-│   │   └── module/                # Business Modules
-│   │       ├── auth/              # Authentication
-│   │       ├── dashboard/         # Dashboard
-│   │       ├── attendance/        # Attendance
-│   │       ├── workflow/          # Workflow
-│   │       ├── finance/           # Finance
-│   │       └── ...
+│   │   ├── common/                # 公共模块
+│   │   ├── config/                # 配置类
+│   │   └── module/                # 业务模块
+│   │       ├── auth/              # 认证模块
+│   │       ├── dashboard/         # 工作台
+│   │       ├── attendance/        # 考勤管理
+│   │       ├── workflow/          # 流程审批
+│   │       └── finance/           # 财务管理
 │   └── src/main/resources/
 │       └── mapper/                # MyBatis XML
 │
-├── oa-frontend/                   # Vue 3 Frontend
+├── oa-frontend/                   # Vue 3 前端
 │   └── src/
-│       ├── views/                 # Page Components
-│       ├── components/            # Shared Components
-│       ├── router/                # Vue Router
-│       └── store/                 # Pinia Store
+│       ├── views/                 # 页面组件
+│       ├── components/            # 公共组件
+│       ├── router/                # 路由配置
+│       └── store/                 # 状态管理
 │
-├── db/                            # SQL Scripts
-├── docker-compose.yml             # Docker Compose
+├── db/                            # 数据库脚本
+├── docker-compose.yml             # Docker编排
 └── README.md
 ```
 
 ---
 
-## 📄 License
+## 📄 开源协议
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+本项目采用 MIT 协议开源
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by LNTU Students**
+**辽宁工程技术大学 课程设计项目**
 
-⭐ Star this repo if you find it helpful!
+如果觉得有帮助，欢迎 ⭐ Star！
 
 </div>
