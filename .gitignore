@@ -19,7 +19,6 @@ target/
 # Logs
 *.log
 logs/
-backend.log
 
 # Build outputs
 dist/
@@ -37,25 +36,33 @@ mysql_data/
 # Database
 *.sql.bak
 
-# 敏感配置文件 (使用 .example 模板)
+# Sensitive config (use .example templates)
 oa-backend/src/main/resources/jdbc.properties
 oa-backend/src/main/resources/application.yml
 
-# 编译和构建日志
-*.log
-build*.log
-compile*.log
-error.log
-
-# 课设文档 (个人文件)
+# Personal documents
 *.docx
+*.xlsx
+*.xls
+*.txt
 学生提交/
-analysis_result.txt
-query/
+query
 
-# Python脚本 (开发辅助)
+# Development scripts
 *.py
+*.bat
+*.sh
 
-# 备份文件
+# Backup files
 *.backup
 *.bak
+
+# Unnecessary docs
+codex_prompts.md
+project_requirements.md
+PROJECT_SETUP_GUIDE.md
+DEPLOY_HUAWEICLOUD.md
+OA在线系统_API接口文档.md
+公告管理系统*.md
+公告系统*.md
+OA系统功能细分表.*
