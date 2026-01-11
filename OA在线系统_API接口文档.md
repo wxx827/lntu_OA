@@ -58,7 +58,7 @@
 ```json
 {
     "username": "admin",
-    "password": "123456"
+    "password": "your_password"
 }
 ```
 
@@ -95,7 +95,7 @@
 ```json
 {
     "username": "zhangsan",
-    "password": "123456",
+    "password": "your_password",
     "role": "EMPLOYEE",
     "sex": "男",
     "tel": "13800138000",

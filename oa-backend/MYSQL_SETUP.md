@@ -15,7 +15,7 @@ choco install mysql
 # https://dev.mysql.com/downloads/installer/
 ```
 
-**安装后设置密码**: 默认用户 `root`, 密码设为 `root` (或修改 application.yml)
+**安装后设置密码**: 默认用户 `root`, 密码设为你自己的密码 (并修改 application.yml)
 
 ---
 
@@ -26,7 +26,7 @@ choco install mysql
 ```bash
 # 登录 MySQL
 mysql -u root -p
-# 输入密码: root
+# 输入你的MySQL密码
 
 # 创建数据库
 CREATE DATABASE oa_system DEFAULT CHARACTER SET utf8mb4;
@@ -60,7 +60,7 @@ mvn spring-boot:run
 ```bash
 curl -X POST http://localhost:8080/api/auth/login ^
   -H "Content-Type: application/json" ^
-  -d "{\"username\":\"Admin\",\"password\":\"123456\"}"
+  -d "{\"username\":\"Admin\",\"password\":\"your_password\"}"
 ```
 
 **预期响应**:
@@ -82,11 +82,11 @@ curl -X POST http://localhost:8080/api/auth/login ^
 - Host: `localhost:3306`
 - Database: `oa_system`
 - Username: `root`
-- Password: `root`
+- Password: `your_password`
 
 **默认账号**:
 - 用户名: `Admin`
-- 密码: `123456`
+- 密码: `your_password` (首次运行需在数据库中设置)
 - EMP_ID: `E001`
 
 **测试数据**:
@@ -108,7 +108,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/oa_system?...
     username: root
-    password: root  # 改成你的MySQL密码
+    password: your_password  # 改成你的MySQL密码
 ```
 
 ### 端口冲突
