@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oa.module.hr.mapper.OaDepartmentMapper">
+    
+    <select id="selectDepartmentListWithDetails" resultType="com.oa.module.hr.entity.OaDepartment">
+        SELECT d.*, u.USERNAME as MANAGER_NAME
+        FROM OA_DEPARTMENT d
+        LEFT JOIN SYS_USER u ON d.MANAGER_ID = u.USER_ID
+        ORDER BY d.SORT_ORDER
+    </select>
+    
+    <select id="selectByParentId" resultType="com.oa.module.hr.entity.OaDepartment">
+        SELECT * FROM OA_DEPARTMENT 
+        WHERE PARENT_ID = #{parentId}
+        ORDER BY SORT_ORDER
+    </select>
+    
+    <select id="selectDepartmentTree" resultType="com.oa.module.hr.entity.OaDepartment">
+        SELECT * FROM OA_DEPARTMENT 
+        ORDER BY DEPT_LEVEL, SORT_ORDER
+    </select>
+    
+    <select id="countEmployeesByDeptId" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM OA_EMPLOYEE_PROFILE 
+        WHERE DEPT_ID = #{deptId}
+    </select>
+    
+</mapper>

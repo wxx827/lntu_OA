@@ -1,0 +1,31 @@
+/* Fix for Element Plus Dialog and Modal Layouts */
+.apply-dialog .el-dialog__body {
+  padding: 20px 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Ensure form items don't collapsed */
+.apply-form .el-form-item {
+  margin-bottom: 22px;
+}
+
+/* Ensure full width for form elements */
+.apply-form .el-select,
+.apply-form .el-input-number,
+.apply-form .el-date-editor {
+  width: 100%;
+}
+
+/* Fix flex layout in headers */
+.dialog-process-header {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.process-badge {
+  flex-shrink: 0;
+}

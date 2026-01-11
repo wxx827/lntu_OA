@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mapper/**/*.xml"/>
+        <property name="typeAliasesPackage" value="com.oa.module"/>
+        <property name="configuration">
+            <bean class="com.baomidou.mybatisplus.core.MybatisConfiguration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+                <property name="cacheEnabled" value="true"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Mapper Scanner -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.oa.module.*.mapper,com.oa.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+</beans>

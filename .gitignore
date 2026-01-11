@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+target/
+*.jar
+*.war
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+*.local
+
+# Logs
+*.log
+logs/
+backend.log
+
+# Build outputs
+dist/
+build/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploads
+uploads/
+mysql_data/
+
+# Database
+*.sql.bak
+
+# 敏感配置文件 (使用 .example 模板)
+oa-backend/src/main/resources/jdbc.properties
+oa-backend/src/main/resources/application.yml
+
+# 编译和构建日志
+*.log
+build*.log
+compile*.log
+error.log
+
+# 课设文档 (个人文件)
+*.docx
+学生提交/
+analysis_result.txt
+query/
+
+# Python脚本 (开发辅助)
+*.py
+
+# 备份文件
+*.backup
+*.bak

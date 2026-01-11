@@ -1,0 +1,554 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.oa:oa-backend >--------------------------
+[INFO] Building oa-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ oa-backend ---
+[INFO] Copying 29 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ oa-backend ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 116 source files to C:\Users\wjx\Desktop\OA鍦ㄧ嚎绯荤粺\oa-backend\target\classes
+[INFO] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/config/SecurityConfig.java: C:\Users\wjx\Desktop\OA鍦ㄧ嚎绯荤粺\oa-backend\src\main\java\com\oa\config\SecurityConfig.java浣跨敤鎴栬鐩栦簡宸茶繃鏃剁殑 API銆?
+[INFO] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/config/SecurityConfig.java: 鏈夊叧璇︾粏淇℃伅, 璇蜂娇鐢?-Xlint:deprecation 閲嶆柊缂栬瘧銆?
+[INFO] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/controller/FinanceController.java: C:\Users\wjx\Desktop\OA鍦ㄧ嚎绯荤粺\oa-backend\src\main\java\com\oa\module\finance\controller\FinanceController.java浣跨敤浜嗘湭缁忔鏌ユ垨涓嶅畨鍏ㄧ殑鎿嶄綔銆?
+[INFO] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/controller/FinanceController.java: 鏈夊叧璇︾粏淇℃伅, 璇蜂娇鐢?-Xlint:unchecked 閲嶆柊缂栬瘧銆?
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/dashboard/service/DashboardService.java:[28,10] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?AnnouncementDTO
+  浣嶇疆: 鎺ュ彛 com.oa.module.dashboard.service.DashboardService
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/dashboard/service/impl/DashboardServiceImpl.java:[228,33] 宸插湪绫?com.oa.module.dashboard.service.impl.DashboardServiceImpl涓畾涔変簡鏂规硶 createMockTeamMembers()
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/workflow/mapper/OaWorkflowMapper.java:[13,38] 鎵句笉鍒扮鍙?  绗﹀彿:   绫?Param
+  浣嶇疆: 鎺ュ彛 com.oa.module.workflow.mapper.OaWorkflowMapper
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/controller/MaterialController.java:[37,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setEmpId(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[17,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[18,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[19,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setData(T)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[25,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[26,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[29,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setSuccess(boolean)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[30,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setData(T)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[31,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[40,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setSuccess(boolean)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[41,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[42,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setData(T)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[51,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setSuccess(boolean)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[52,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[61,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setSuccess(boolean)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[62,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[63,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/role/controller/RoleController.java:[30,13] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.role.entity.OaRole鐨勫彉閲?role
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/role/controller/RoleController.java:[38,13] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setRoleId(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.role.entity.OaRole鐨勫彉閲?role
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[32,62] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getMatId()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[36,21] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getStock()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMaterial鐨勫彉閲?material
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[36,40] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getCount()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[40,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setState(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[41,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setApplyDate(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[48,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getEmpId()
+    浣嶇疆: 绫?com.oa.module.material.entity.OaMatApply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[49,30] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getApplyDate()
+    浣嶇疆: 绫?com.oa.module.material.entity.OaMatApply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[58,18] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getState()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[61,52] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getMatId()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[61,70] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getCount()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[66,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setState(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[20,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[21,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[22,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setData(T)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[28,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[29,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[35,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[36,15] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[29,22] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getCapacity()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingRoom
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[37,17] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getStartTime()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[37,43] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEndTime()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,29] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getRoomId()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,47] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getStartTime()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,68] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEndTime()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[45,13] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setStatus(int)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[46,13] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[53,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getEmpId()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[54,30] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getCreateTime()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[73,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getRoomId()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[74,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getStatus()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[75,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getStartTime()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[76,21] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getEndTime()
+    浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/controller/CarController.java:[57,16] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCarId(java.lang.Long)
+  浣嶇疆: 绫诲瀷涓篶om.oa.entity.Car鐨勫彉閲?car
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/system/service/impl/SysEmployeeServiceImpl.java:[14,69] 鏂规硶寮曠敤鏃犳晥
+  鎵句笉鍒扮鍙?    绗﹀彿:   鏂规硶 getEmpName()
+    浣嶇疆: 绫?com.oa.module.system.entity.SysEmployee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[33,70] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getUsername()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[38,62] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getPassword()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[40,22] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getPassword()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[41,26] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getPassword()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[41,56] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getPassword()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[46,54] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEmpName()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[46,77] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEmpId()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[49,34] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getRole()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[49,63] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getRole()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[50,38] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEmpName()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[57,73] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getUsername()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[63,40] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getUsername()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[65,63] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getPassword()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[66,17] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setPassword(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[67,37] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getRole()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[68,36] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getSex()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[69,36] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getTel()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[70,38] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getEmail()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[89,21] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setPassword(<nulltype>)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[36,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setClaimNo(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[37,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setClaimDate(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[38,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[39,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setPaymentStatus(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[40,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[41,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[49,41] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getClaimId()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[50,24] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaInvoice鐨勫彉閲?invoice
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[51,24] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaInvoice鐨勫彉閲?invoice
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[89,36] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getStatus()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[93,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[94,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setApproverId(java.lang.Long)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[95,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setApproveTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[96,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setApproveRemark(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[97,14] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[109,18] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setInvoices(java.util.List<com.oa.module.finance.entity.OaInvoice>)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[124,20] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[125,20] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[126,20] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[42,41] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 getClockInTime()
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?existing
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[47,19] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setUserId(java.lang.Long)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[48,19] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setWorkDate(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[49,19] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setClockInTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[50,19] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setClockInLocation(java.lang.String)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[51,19] 鎵句笉鍒扮鍙?  绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+  浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.431 s
+[INFO] Finished at: 2026-01-07T15:59:33+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project oa-backend: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/dashboard/service/DashboardService.java:[28,10] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?AnnouncementDTO
+[ERROR]   浣嶇疆: 鎺ュ彛 com.oa.module.dashboard.service.DashboardService
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/dashboard/service/impl/DashboardServiceImpl.java:[228,33] 宸插湪绫?com.oa.module.dashboard.service.impl.DashboardServiceImpl涓畾涔変簡鏂规硶 createMockTeamMembers()
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/workflow/mapper/OaWorkflowMapper.java:[13,38] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   绫?Param
+[ERROR]   浣嶇疆: 鎺ュ彛 com.oa.module.workflow.mapper.OaWorkflowMapper
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/controller/MaterialController.java:[37,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setEmpId(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[17,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[18,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[19,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setData(T)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[25,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/response/Result.java:[26,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.response.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[29,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setSuccess(boolean)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[30,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setData(T)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[31,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[40,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setSuccess(boolean)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[41,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[42,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setData(T)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[51,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setSuccess(boolean)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[52,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[61,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setSuccess(boolean)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[62,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/common/Result.java:[63,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.common.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/role/controller/RoleController.java:[30,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.role.entity.OaRole鐨勫彉閲?role
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/role/controller/RoleController.java:[38,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setRoleId(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.role.entity.OaRole鐨勫彉閲?role
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[32,62] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getMatId()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[36,21] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getStock()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMaterial鐨勫彉閲?material
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[36,40] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getCount()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[40,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setState(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[41,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setApplyDate(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[48,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getEmpId()
+[ERROR]     浣嶇疆: 绫?com.oa.module.material.entity.OaMatApply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[49,30] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getApplyDate()
+[ERROR]     浣嶇疆: 绫?com.oa.module.material.entity.OaMatApply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[58,18] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getState()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[61,52] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getMatId()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[61,70] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getCount()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/material/service/impl/MaterialServiceImpl.java:[66,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setState(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.material.entity.OaMatApply鐨勫彉閲?apply
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[20,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[21,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[22,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setData(T)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[28,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[29,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[35,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCode(java.lang.Integer)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/util/Result.java:[36,15] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setMessage(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.util.Result<T>鐨勫彉閲?result
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[29,22] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getCapacity()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingRoom
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[37,17] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getStartTime()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[37,43] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEndTime()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,29] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getRoomId()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,47] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getStartTime()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[41,68] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEndTime()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[45,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setStatus(int)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[46,13] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.meeting.entity.OaMeetingBook鐨勫彉閲?book
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[53,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getEmpId()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[54,30] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getCreateTime()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[73,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getRoomId()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[74,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getStatus()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[75,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getStartTime()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/meeting/service/impl/MeetingServiceImpl.java:[76,21] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getEndTime()
+[ERROR]     浣嶇疆: 绫?com.oa.module.meeting.entity.OaMeetingBook
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/controller/CarController.java:[57,16] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCarId(java.lang.Long)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.entity.Car鐨勫彉閲?car
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/system/service/impl/SysEmployeeServiceImpl.java:[14,69] 鏂规硶寮曠敤鏃犳晥
+[ERROR]   鎵句笉鍒扮鍙?
+[ERROR]     绗﹀彿:   鏂规硶 getEmpName()
+[ERROR]     浣嶇疆: 绫?com.oa.module.system.entity.SysEmployee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[33,70] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getUsername()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[38,62] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getPassword()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[40,22] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getPassword()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[41,26] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getPassword()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[41,56] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getPassword()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.LoginDTO鐨勫彉閲?loginDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[46,54] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEmpName()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[46,77] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEmpId()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[49,34] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getRole()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[49,63] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getRole()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[50,38] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEmpName()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[57,73] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getUsername()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[63,40] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getUsername()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[65,63] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getPassword()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[66,17] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setPassword(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[67,37] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getRole()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[68,36] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getSex()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[69,36] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getTel()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[70,38] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getEmail()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.auth.dto.RegisterDTO鐨勫彉閲?registerDTO
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/auth/controller/AuthController.java:[89,21] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setPassword(<nulltype>)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.system.entity.SysEmployee鐨勫彉閲?employee
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[36,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setClaimNo(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[37,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setClaimDate(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[38,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[39,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setPaymentStatus(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[40,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[41,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[49,41] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getClaimId()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[50,24] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaInvoice鐨勫彉閲?invoice
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[51,24] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaInvoice鐨勫彉閲?invoice
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[89,36] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getStatus()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[93,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[94,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setApproverId(java.lang.Long)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[95,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setApproveTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[96,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setApproveRemark(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[97,14] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[109,18] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setInvoices(java.util.List<com.oa.module.finance.entity.OaInvoice>)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseClaim鐨勫彉閲?claim
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[124,20] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setStatus(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[125,20] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/finance/service/impl/FinanceServiceImpl.java:[126,20] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setUpdateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.finance.entity.OaExpenseType鐨勫彉閲?expenseType
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[42,41] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 getClockInTime()
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?existing
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[47,19] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setUserId(java.lang.Long)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[48,19] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setWorkDate(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[49,19] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setClockInTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[50,19] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setClockInLocation(java.lang.String)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] /C:/Users/wjx/Desktop/OA鍦ㄧ嚎绯荤粺/oa-backend/src/main/java/com/oa/module/attendance/service/impl/AttendanceServiceImpl.java:[51,19] 鎵句笉鍒扮鍙?
+[ERROR]   绗﹀彿:   鏂规硶 setCreateTime(java.util.Date)
+[ERROR]   浣嶇疆: 绫诲瀷涓篶om.oa.module.attendance.entity.OaAttendance鐨勫彉閲?attendance
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

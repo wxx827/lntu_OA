@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oa.mapper.CarMapper">
+
+    <resultMap id="BaseResultMap" type="com.oa.entity.Car">
+        <id column="CAR_ID" property="carId"/>
+        <result column="LICENSE_PLATE" property="licensePlate"/>
+        <result column="BRAND" property="brand"/>
+        <result column="MODEL" property="model"/>
+        <result column="SEATS" property="seats"/>
+        <result column="STATUS" property="status"/>
+        <result column="MILEAGE" property="mileage"/>
+        <result column="LAST_MAINTENANCE_DATE" property="lastMaintenanceDate"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * FROM OA_CAR ORDER BY CREATE_TIME DESC
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT * FROM OA_CAR WHERE CAR_ID = #{carId}
+    </select>
+
+    <insert id="insert" parameterType="com.oa.entity.Car" useGeneratedKeys="true" keyProperty="carId">
+        INSERT INTO OA_CAR (
+            LICENSE_PLATE, BRAND, MODEL, SEATS, STATUS, 
+            MILEAGE, LAST_MAINTENANCE_DATE, CREATE_TIME, UPDATE_TIME
+        ) VALUES (
+            #{licensePlate}, #{brand}, #{model}, #{seats}, 
+            #{status, jdbcType=VARCHAR}, #{mileage, jdbcType=INTEGER}, 
+            #{lastMaintenanceDate, jdbcType=DATE}, NOW(), NOW()
+        )
+    </insert>
+
+    <update id="update" parameterType="com.oa.entity.Car">
+        UPDATE OA_CAR
+        <set>
+            <if test="licensePlate != null">LICENSE_PLATE = #{licensePlate},</if>
+            <if test="brand != null">BRAND = #{brand},</if>
+            <if test="model != null">MODEL = #{model},</if>
+            <if test="seats != null">SEATS = #{seats},</if>
+            <if test="status != null">STATUS = #{status},</if>
+            <if test="mileage != null">MILEAGE = #{mileage},</if>
+            <if test="lastMaintenanceDate != null">LAST_MAINTENANCE_DATE = #{lastMaintenanceDate},</if>
+            UPDATE_TIME = NOW()
+        </set>
+        WHERE CAR_ID = #{carId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM OA_CAR WHERE CAR_ID = #{carId}
+    </delete>
+
+    <select id="selectStatsByStatus" resultType="map">
+        SELECT 
+            STATUS,
+            COUNT(*) as COUNT
+        FROM OA_CAR
+        GROUP BY STATUS
+    </select>
+
+    <select id="countTotal" resultType="int">
+        SELECT COUNT(*) FROM OA_CAR
+    </select>
+</mapper>

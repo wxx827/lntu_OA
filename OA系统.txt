@@ -1,0 +1,598 @@
+软 件 学 院
+综合课程设计报告书
+
+
+
+
+
+
+课程名称           综合课程设计（2）         
+项目名称           OA移动互联网办公系统     
+专业班级             软件23-15班            
+姓    名                 王佳兴              
+学    号              2320011519             
+指导教师                张丽莹               
+验收教师                张丽莹                
+
+ 2026年 1月 
+目  录
+1 项目概述	3
+1.1系统概述	3
+1.2系统功能模块	3
+2 系统需求分析	3
+2.1需求陈述	3
+2.2 Use Case建模	5
+3 系统架构类图	6
+4 系统详细设计	7
+4.1系统交互图	7
+4.2数据库设计	11
+4.3开发环境的选择	14
+5 实现	20
+6 总结与展望	30
+参考文献	32
+
+ 
+1 项目概述
+1.1 系统概述
+本系统是一个基于Spring MVC和Vue 3的企业级OA协同办公平台，采用前后端分离架构设计。系统主要包含工作台仪表盘、考勤管理、流程审批、会议协作、在线消息、云文件、资产物资、行政管理、人力资源等核心功能模块。后端采用Spring MVC 5.3.20框架结合MyBatis-Plus 3.5.3进行数据持久化，使用JWT实现用户身份认证；前端采用Vue 3.5配合Element Plus 2.13组件库构建现代化用户界面，通过Axios进行HTTP请求，使用ECharts 6实现数据可视化。该系统旨在帮助企业实现日常办公流程的数字化管理，提升组织协作效率和管理水平。
+1.2系统功能模块
+根据业务流程，将系统抽象出几个功能模块，如图1-1所示。
+下面模块划分只是抽象意义上的划分，各模块之间需要共享数据，相互协作，完成整个系统流程，单一事物功能模块间是相互独立的。
+ 
+图1-1 系统功能模块
+
+2 系统需求分析
+2.1 需求陈述
+OA协同办公系统主要用于企业内部的日常办公管理，涵盖考勤、审批、会议、物资等多个业务领域。系统通过工作台仪表盘、考勤管理、流程审批、会议协作、资产物资、行政管理、人力资源等核心模块，帮助企业实现办公流程的数字化和自动化。这一系统将提供一个统一的协同办公平台，支持企业日常运营管理，从而优化工作效率和资源配置。
+提升办公效率：实现考勤打卡、请假审批、会议预定等日常事务的在线化处理，减少纸质流程和人工干预。
+规范业务流程：通过流程审批模块实现请假、报销、物资申领等业务的标准化审批流程，确保合规性。
+优化资源管理：通过会议室预定、物资管理、车辆管理等功能实现企业资源的合理调配和高效利用。
+1. 考勤管理模块
+功能描述：
+考勤管理模块负责员工日常考勤的记录和管理，支持多种考勤场景。主要功能包括：
+考勤打卡：支持员工上下班打卡，记录打卡时间和位置信息。
+考勤记录：查看个人和部门的考勤历史记录，支持按日期范围筛选。
+请假申请：员工可在线提交请假申请，选择请假类型、时间段并填写请假原因。
+加班申请：支持员工提交加班申请，记录加班时间和工作内容。
+出差申请：员工可申请出差，填写出差目的地、时间和事由。
+考勤统计：生成考勤统计报表，展示出勤率、迟到早退等数据。
+功能需求：
+考勤记录的增删改查。
+支持多种考勤异常类型的处理。
+与流程审批模块联动，实现请假、加班、出差的审批流程。
+ 2. 流程审批模块
+功能描述：
+流程审批模块是系统的业务核心，实现各类申请的在线审批。主要功能包括：
+待办任务：审批人查看待处理的审批任务列表，支持按关键字和优先级筛选。
+已办历史：查看已处理的审批记录，包括审批意见和处理时间。
+发起申请：员工可发起各类申请，包括请假、报销、物资申领等。
+我的申请：查看个人提交的申请记录及审批状态。
+功能需求：
+支持多种流程类型的审批。
+实现审批通过、驳回操作，支持填写审批意见。
+审批状态实时更新，支持草稿保存功能。
+ 3. 会议协作模块
+功能描述：
+会议协作模块用于企业会议室资源的管理和预定。主要功能包括：
+会议室预定：展示可用会议室列表，支持按容量筛选，员工可在线预定会议室。
+我的会议：查看个人的会议预定记录，支持取消预定操作。
+冲突检测：系统自动检测会议室时间冲突，防止重复预定。
+功能需求：
+会议室信息的展示和筛选。
+会议预定的增删改查。
+实现时间段冲突检测逻辑，确保会议室资源不被重复占用。
+ 4. 资产物资模块
+功能描述：
+资产物资模块用于企业办公物资的库存管理和申领。主要功能包括：
+库存中心：展示物资列表，包括名称、规格、价格、库存数量等信息。
+申请记录：员工可申请领用物资，查看申请状态和历史记录。
+库存扣减：物资申请审批通过后，系统自动扣减库存数量。
+功能需求：
+物资信息的增删改查。
+物资申领与审批流程联动。
+库存数量实时更新，支持库存不足预警。
+管理员：负责系统的整体管理和配置，包括用户管理、权限配置、系统设置等。可以对所有模块进行管理操作。
+部门经理：主要负责审批本部门员工的各类申请，包括请假、加班、物资申领等，可以查看部门考勤统计。
+普通员工：可以进行考勤打卡、提交各类申请、预定会议室、申领物资等操作，查看个人相关记录。
+
+2.2 Use Case建模
+2.2.1定义活动者
+根据OA协同办公系统的需求可以确定3个活动者，即管理员、部门经理和普通员工。管理员可以进行系统管理和全局配置；部门经理可以进行审批操作；普通员工可以进行日常办公操作。
+2.2.2 Use Case图
+根据系统需求分析，结合上节系统活动者的定义分析，得到系统的主要用例如下：
+（1）考勤管理用例
+（2）流程审批用例
+（3）会议协作用例
+（4）资产物资用例
+结合活动者和用例得到的用例图如下图2-1所示。
+ 
+图2-1 Use Case 图
+3 系统架构类图
+类图，它是架构的静态结构图，表达了各个类之间的静态联系。
+ 
+图三 OA协同办公系统类图
+4 系统详细设计
+4.1 系统交互图
+4.1.1系统架构类交互图
+系统架构类的工作流程：
+（1）用户界面对象在接收了用户的输入请求后，向业务代理对象发送处理请求。
+（2）业务代理对象接收到请求后，向权限管理对象发送验证权限请求，通过JWT令牌验证用户身份。
+（3）权限管理对象验证权限后将验证结果返回给业务代理对象。
+（4）业务代理对象根据验证结果进行以下处理：对于不符合权限的请求则返回401未授权信息；对于符合权限的请求，则将请求转发给业务对象。
+（5）业务对象进行业务处理。对于业务处理中的数据持久化操作，通过MyBatis-Plus访问数据库进行操作，期间的任何异常都交给全局异常处理器处理。最后返回统一格式的Result对象给业务代理对象。
+（6）业务代理对象将处理结果信息返回给用户界面。
+4.1.2 活动者与模块间的交互
+系统架构类的交互图如下图4-1所示：
+ 
+图4-1系统架构类的交互图
+ 
+图4-2 会议室预定交互图
+ 
+图4-3 流程审批交互图
+ 
+图4-4 物资申领交互图
+        
+4.1.3 系统协作图
+给出员工进行日常办公协作图如下图4-2所示。
+ 
+图 4-5 员工进行日常办公的协作图
+
+4.1.4 系统状态图
+流程审批的状态图如下图4-6所示。
+ 
+图 4-6 流程审批的状态图
+4.1.5 系统活动图
+活动图如下图4-7所示。
+ 
+图 4-7 活动图
+
+4.2数据库设计
+4.2.1 ER图
+ER模型图如图4-8，图4-9和图4-10。
+ 
+图 4-8 员工管理E-R图
+ 
+图 4-9 会议管理E-R图
+ 
+图 4-10 物资管理E-R图
+4.2.2 物理表结构图
+物理表结构如下：
+SYS_EMPLOYEE（员工信息表）
+表4-1 员工信息表
+Table 4-1 employee information form
+主键	字段名称	数据类型	长度	字段说明
+1	EMP_ID	VARCHAR	32	员工编号
+	EMP_NAME	VARCHAR	50	员工姓名
+	PASSWORD	VARCHAR	100	密码(MD5加密)
+	SEX	VARCHAR	10	性别
+	TEL	VARCHAR	20	联系电话
+	EMAIL	VARCHAR	50	电子邮箱
+	DEP_ID	VARCHAR	32	部门编号
+	POS_ID	VARCHAR	32	职务编号
+	ROLE	VARCHAR	20	角色类型
+
+OA_MEETING_ROOM（会议室信息表）
+表4-2 会议室信息表
+Table 4-2 meeting room information form
+主键	字段名称	数据类型	长度	字段说明
+1	ROOM_ID	VARCHAR	32	会议室编号
+	ROOM_NAME	VARCHAR	100	会议室名称
+	LOCATION	VARCHAR	100	位置
+	CAPACITY	INT	4	容纳人数
+	HAS_MEDIA	INT	1	是否有多媒体设备
+	STATUS	INT	1	状态(0空闲/1占用/2维护)
+
+OA_MEETING_BOOK（会议预定表）
+表4-3 会议预定表
+Table 4-3 meeting booking information form
+主键	字段名称	数据类型	长度	字段说明
+1	BOOK_ID	VARCHAR	32	预定编号
+	ROOM_ID	VARCHAR	32	会议室编号
+	EMP_ID	VARCHAR	32	预定人编号
+	START_TIME	DATETIME	0	开始时间
+	END_TIME	DATETIME	0	结束时间
+	TOPIC	VARCHAR	200	会议主题
+	STATUS	INT	1	状态(0待审批/1已通过/2已驳回)
+	CREATE_TIME	DATETIME	0	创建时间
+
+OA_MATERIAL（物资信息表）
+表4-4 物资信息表
+Table 4-4 material information form
+主键	字段名称	数据类型	长度	字段说明
+1	MAT_ID	VARCHAR	32	物资编号
+	MAT_NAME	VARCHAR	100	物资名称
+	SPEC	VARCHAR	50	规格
+	PRICE	DECIMAL	10,2	单价
+	STOCK	INT	10	库存数量
+
+OA_WORKFLOW（流程审批表）
+表4-5 流程审批表
+Table 4-5 workflow information form
+主键	字段名称	数据类型	长度	字段说明
+1	FLOW_ID	VARCHAR	32	流程编号
+	FLOW_TYPE	VARCHAR	50	流程类型
+	TITLE	VARCHAR	200	申请标题
+	PRIORITY	VARCHAR	20	优先级
+	FLOW_DATA	TEXT	0	流程数据(JSON)
+	INITIATOR_ID	VARCHAR	32	发起人编号
+	APPROVER_ID	VARCHAR	32	审批人编号
+	STATUS	VARCHAR	20	状态
+	CREATE_TIME	DATETIME	0	创建时间
+
+
+4.3 开发环境的选择
+4.3.1系统开发工具
+IntelliJ IDEA 是由 JetBrains 公司开发的一款集成开发环境（IDE），主要用于 Java 开发，同时也支持其他多种编程语言（如 Kotlin、Groovy、Scala、JavaScript、TypeScript、Python、PHP 等）。IDEA 提供了强大的智能代码辅助、调试、测试、构建和部署功能，广泛应用于软件开发领域，尤其是 Java 开发者。
+主要特性：
+1. 智能代码编辑：
+   代码补全：IntelliJ IDEA 提供强大的代码自动补全功能，包括方法名、变量名、类名、文件名等，极大提高开发效率。
+   实时错误检测：IDEA 实时监控代码，自动提示错误和警告，提供快速修复建议。
+   重构支持：提供各种代码重构功能，如重命名、提取方法、变量等。
+   智能提示：根据上下文提供相关的代码建议和文档帮助，减少开发者的查阅文档时间。
+2. 强大的调试功能：
+   支持本地和远程调试，具有可视化的调试界面。
+   支持断点、条件断点、步进执行等多种调试功能。
+3. 版本控制集成：
+   内置 Git、SVN、Mercurial 等版本控制系统的支持，可以直接在 IDE 中进行代码的提交、更新和合并操作。
+4. 插件生态系统：
+   IntelliJ IDEA 提供丰富的插件市场，支持多种语言、框架、工具的集成，如 Maven、Gradle、Spring、JUnit、Docker 等。
+   可以通过插件扩展 IDE 的功能，支持开发者各种开发需求。
+5. 多语言支持：
+   除了 Java，IDEA 还支持 Kotlin、Groovy、Scala、SQL、HTML/CSS、JavaScript、TypeScript 等多种编程语言。
+   支持开发各种类型的应用，包括 Web 应用、桌面应用、移动应用等。
+6. 内置工具：
+   包括数据库工具、终端、编译器、构建工具（如 Gradle、Maven）、单元测试框架（如 JUnit、TestNG）等，减少了开发者频繁切换工具的需要。
+选择 IntelliJ IDEA 的理由
+1. 高效的开发体验：
+   IntelliJ IDEA 提供了极其智能和精准的代码补全、重构、导航等功能，大大提高开发效率，减少错误。
+   由于其"开发即维护"理念，IDEA 在代码结构、可读性、可维护性上做得非常好，帮助开发者快速上手和保持代码整洁。
+2. 对 Java 的极佳支持：
+   IntelliJ IDEA 是针对 Java 开发优化的 IDE，它对 Java 语言和 JVM 生态的支持非常完备，能够提供高效的编译、调试和分析功能。
+   对 Spring、Java EE、JPA、Hibernate 等框架的集成支持也非常强大，开发时能显著减少配置和集成的复杂度。
+3. 跨平台支持：
+   IntelliJ IDEA 支持 Windows、macOS 和 Linux 等操作系统，开发者可以根据个人需求选择使用不同的操作系统进行开发，而不需要担心工具兼容性问题。
+4. 智能化代码助手：
+   IntelliJ IDEA 拥有强大的智能代码助手功能，它不仅支持代码补全，还能在开发过程中为开发者提供提示、重构建议和最佳实践建议，进一步提升了开发效率。
+   对常见问题（如 NullPointerException、并发问题等）有内建的检测机制和优化建议
+5. 集成丰富的开发工具：
+   集成了构建工具（如 Maven、Gradle）、测试框架（如 JUnit、TestNG）、版本控制（如 Git、SVN）等，开发者无需跳出 IDE 即可完成所有工作流程。
+   内置对 Docker、Kubernetes 等现代开发环境的支持，使得容器化应用的开发变得更为简单。
+6. 企业级开发支持：
+   IntelliJ IDEA 支持大型项目的管理，具有较高的可扩展性和稳定性，适合企业级应用开发。
+   强大的性能和良好的扩展性使其能够满足企业开发中的各种需求，包括分布式系统、微服务架构等。
+7. 支持多种编程语言：
+   不仅支持 Java，还支持多种其他流行的编程语言，如 Kotlin、Python、JavaScript、TypeScript、PHP 等，可以满足跨语言开发的需求。
+   对 Kotlin 的特别优化，使得其成为 Android 开发的首选 IDE。
+8. 丰富的社区与生态：
+   IntelliJ IDEA 拥有一个庞大的开发者社区，许多插件和第三方工具的开发都围绕这个平台进行，因此无论是开发工具、教程还是解决方案都非常丰富。
+9. 流畅的调试与性能分析：
+   对于 Java 开发，IntelliJ IDEA 提供了非常流畅的调试体验，支持可视化的调试视图，便于跟踪问题。
+   性能分析工具的集成能够帮助开发者识别性能瓶颈，提升应用性能。
+10. 商业版与免费版的差异化：
+    免费版（Community Edition）：提供了大部分基本功能，适合普通的 Java 开发、Web 开发等。
+    商业版（Ultimate Edition）：提供更多企业级功能，如数据库工具、Web 开发支持、Spring 相关功能的全面支持等，适合大型企业和专业开发人员。
+4.3.2数据库的选择
+MySQL 是一种开源的关系型数据库管理系统（RDBMS），广泛用于各种类型的应用程序中，尤其是 Web 应用和企业级应用。MySQL 由 Oracle 公司维护，并遵循 GPL（GNU General Public License）许可证，意味着它可以免费使用，同时也提供了商业许可版本。MySQL 以其稳定性、可靠性和高性能而著称，广泛应用于网站、应用程序、数据仓库、分析平台等领域。
+主要特性：
+1. 开源且免费的使用：
+   MySQL 是开源软件，符合 GPL 许可证要求。开发者可以自由使用、修改源代码，并且无需支付许可费用。
+   企业和开发者可以根据需求对 MySQL 进行定制和扩展。
+2. 高性能：
+   MySQL 在读取性能上表现优秀，适用于需要快速数据存储和读取的应用场景。
+   支持多种存储引擎（如 InnoDB、MyISAM），允许用户根据性能需求选择最合适的存储引擎。
+3. ACID 支持：
+   MySQL 通过支持事务管理和符合 ACID（原子性、一致性、隔离性、持久性）标准来保证数据的完整性和一致性。
+   InnoDB 存储引擎，作为 MySQL 默认的事务处理引擎，提供了强大的事务支持和崩溃恢复功能。
+4. 跨平台支持：
+   MySQL 可以运行在多种操作系统上，包括 Linux、Windows、macOS 等平台。
+   这使得 MySQL 成为跨平台应用和开发的理想选择，支持各种开发和部署环境。
+5. 高可扩展性：
+   MySQL 支持高并发、多线程处理，能在大规模数据量下稳定运行。
+   可通过分区、复制、集群等技术实现水平和垂直扩展。
+6. 支持多种编程语言和框架：
+   MySQL 提供了与多种编程语言的接口，包括 PHP、Python、Java、C、C++、Node.js 等。
+   它也是许多流行 Web 开发框架（如 Laravel、Django、Ruby on Rails）和内容管理系统（如 WordPress、Drupal、Joomla）的数据库选项。
+7. 易于管理与维护：
+   MySQL 提供了命令行工具和图形化管理工具（如 MySQL Workbench），帮助开发者和数据库管理员进行日常管理。
+   自动化备份、监控、性能优化和日志管理等功能减少了运维的复杂度。
+8. 支持 SQL 标准：
+   MySQL 完全支持 SQL 标准（如 DDL、DML、事务、约束等），同时还提供了许多附加功能，提升数据库开发的灵活性。
+   用户可以使用熟悉的 SQL 语句进行数据操作和查询。
+9. 安全性高：
+   MySQL 提供多种安全功能，包括数据加密、用户权限管理、SSL/TLS 支持等。
+   支持基于角色的访问控制，确保数据访问的安全性。
+10. 活跃的社区和企业支持：
+    MySQL 拥有一个活跃的开源社区，开发者可以获得丰富的文档、教程和技术支持。
+    同时，Oracle 还提供了付费的企业级支持，适合有严格 SLA（服务级别协议）需求的企业。
+选择 MySQL 的理由
+1. 高性能和可靠性：
+   MySQL 以其高速的查询性能和高效的数据处理能力在多个领域得到了广泛应用。对于需要快速响应和高吞吐量的应用，MySQL 是一个理想选择。
+   它的复制、备份和恢复功能确保了高可靠性，能够有效防止数据丢失，保证数据的完整性。
+2. 广泛的应用与成熟的技术生态：
+   作为全球最流行的开源数据库之一，MySQL 在 Web 开发、电子商务、内容管理系统、云计算、大数据等领域都有广泛应用。
+   众多大型互联网公司（如 Facebook、Twitter、YouTube 等）都使用 MySQL，因此它的技术栈和生态非常成熟。
+3. 灵活的存储引擎选择：
+   MySQL 提供了多种存储引擎，能够满足不同应用场景的需求。例如，InnoDB 提供事务支持和数据完整性，而 MyISAM 更适合读密集型应用。
+   开发者可以根据具体需求选择合适的存储引擎，从而优化性能。
+4. 丰富的工具和文档支持：
+   MySQL 提供了多种管理工具，如 MySQL Workbench、MySQL Shell 等，帮助开发人员和数据库管理员更方便地管理数据库。
+   通过大量的社区文档、教程和论坛，开发者可以快速解决问题并掌握最佳实践。
+5. 可扩展性和高可用性：
+   MySQL 支持主从复制、集群和分布式架构，使得它能够处理越来越大规模的数据和流量需求。
+   它还具有负载均衡和自动故障转移机制，能够确保数据库的高可用性。
+6. 跨平台兼容性：
+   MySQL 能够在多种操作系统上运行，无论是 Linux、Windows 还是 macOS，都能无缝地进行安装和使用。
+   这种跨平台特性让 MySQL 成为开发和生产环境中不可或缺的数据库解决方案。
+7. 开源和社区驱动：
+   作为开源项目，MySQL 提供了完全免费的使用权限，同时也有活跃的开源社区提供支持。
+   由于拥有大规模的开发者和用户群体，MySQL 的技术不断更新和完善，确保其始终处于技术前沿。
+8. 广泛的企业应用支持：
+   对于需要企业级数据库的公司，MySQL 提供了付费的企业版支持，包含更多的功能（如增强的安全性、性能监控工具等）和服务。
+   适合对服务可靠性、技术支持和系统稳定性有较高要求的大型企业。
+9. 高度兼容性：
+   MySQL 兼容主流的 SQL 标准，且与其他流行的数据库系统（如 PostgreSQL、Oracle）具有一定的兼容性，便于数据迁移和整合。
+   这使得 MySQL 成为跨数据库操作和整合的理想选择。
+10. 适用于多种场景：
+    MySQL 不仅适用于小型网站，还适用于中大型应用的数据库需求，能够处理大量并发请求和复杂查询。
+    无论是传统的企业级应用还是现代化的云应用，MySQL 都能胜任。
+5 实现
+（1）用户认证实现类：
+@RestController
+@RequestMapping("/api/auth")
+@Tag(name = "Authentication", description = "Login and User Info")
+public class AuthController {
+
+    @Autowired
+    private SysEmployeeService employeeService;
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @PostMapping("/login")
+    @Operation(summary = "Login")
+    public Result<Map<String, String>> login(@RequestBody LoginDTO loginDTO) {
+        SysEmployee employee = employeeService.getByUsername(loginDTO.getUsername());
+        if (employee == null) {
+            return Result.error("User not found");
+        }
+        
+        String inputMd5 = DigestUtils.md5DigestAsHex(loginDTO.getPassword().getBytes(StandardCharsets.UTF_8));
+        
+        if (!employee.getPassword().equals(inputMd5)) {
+            if (!employee.getPassword().equals(loginDTO.getPassword())) {
+                return Result.error("Invalid password");
+            }
+        }
+
+        String token = jwtUtil.generateToken(employee.getEmpName(), employee.getEmpId());
+        Map<String, String> data = new HashMap<>();
+        data.put("token", token);
+        data.put("role", employee.getRole() != null ? employee.getRole() : "EMPLOYEE");
+        data.put("username", employee.getEmpName());
+        return Result.success(data);
+    }
+
+    @GetMapping("/userInfo")
+    @Operation(summary = "Get User Info")
+    public Result<SysEmployee> getUserInfo(HttpServletRequest request) {
+        String token = request.getHeader("Authorization");
+        if (token != null && token.startsWith("Bearer ")) {
+            token = token.substring(7);
+            String username = jwtUtil.extractUsername(token);
+            SysEmployee employee = employeeService.getByUsername(username);
+            employee.setPassword(null);
+            return Result.success(employee);
+        }
+        return Result.error(401, "Unauthorized");
+    }
+}
+ 
+图5-1 登录功能
+（2）会议管理实现类：
+@RestController
+@RequestMapping("/api/meeting")
+@Tag(name = "Meeting Management", description = "Room and Booking")
+public class MeetingController {
+
+    @Autowired
+    private MeetingService meetingService;
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @GetMapping("/room/list")
+    @Operation(summary = "Get meeting rooms")
+    public Result<List<OaMeetingRoom>> getRoomList(@RequestParam(required = false) Integer capacity) {
+        return Result.success(meetingService.getRoomList(capacity));
+    }
+
+    @PostMapping("/book/add")
+    @Operation(summary = "Book a room")
+    public Result<String> addBooking(@RequestBody OaMeetingBook book, HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String empId = jwtUtil.extractUserId(token);
+        book.setEmpId(empId);
+        
+        meetingService.addBooking(book);
+        return Result.success("Booking submitted");
+    }
+
+    @GetMapping("/book/my")
+    @Operation(summary = "Get my bookings")
+    public Result<List<OaMeetingBook>> getMyBookings(@RequestParam(required = false) Integer status, HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String empId = jwtUtil.extractUserId(token);
+        return Result.success(meetingService.getMyBookings(empId, status));
+    }
+
+    @PutMapping("/book/cancel/{id}")
+    @Operation(summary = "Cancel booking")
+    public Result<String> cancelBooking(@PathVariable String id) {
+        meetingService.cancelBooking(id);
+        return Result.success("Cancelled");
+    }
+}
+ 
+图5-2 会议室预定功能
+ 
+图5-3 会议室列表功能
+（3）流程审批实现类：
+@RestController
+@RequestMapping("/api/workflow")
+@Tag(name = "Workflow Management", description = "")
+public class WorkflowController {
+
+    @Autowired
+    private WorkflowService workflowService;
+    
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @GetMapping("/my-tasks")
+    @Operation(summary = "")
+    public Result<List<OaWorkflow>> getMyTasks(
+            @RequestParam(required = false) String keyword,
+            @RequestParam(required = false) String priority,
+            HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String approverId = jwtUtil.extractUserId(token);
+        
+        List<OaWorkflow> tasks = workflowService.getMyTasks(approverId, keyword, priority);
+        return Result.success(tasks);
+    }
+
+    @PostMapping("/approve/{id}")
+    @Operation(summary = "")
+    public Result<String> approve(
+            @PathVariable String id,
+            @RequestBody Map<String, String> params,
+            HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String approverId = jwtUtil.extractUserId(token);
+        
+        String action = params.get("action");
+        String comment = params.get("comment");
+        
+        workflowService.approve(id, approverId, action, comment);
+        return Result.success("");
+    }
+
+    @PostMapping("/create")
+    @Operation(summary = "")
+    public Result<OaWorkflow> createWorkflow(
+            @RequestBody Map<String, String> params,
+            HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String initiatorId = jwtUtil.extractUserId(token);
+        
+        String flowType = params.get("flowType");
+        String title = params.get("title");
+        String priority = params.get("priority");
+        String flowData = params.get("flowData");
+        String approverId = "E001";
+        
+        OaWorkflow workflow = workflowService.createWorkflow(
+            flowType, title, priority, flowData, initiatorId, approverId
+        );
+        
+        return Result.success(workflow);
+    }
+}
+ 
+图5-4 流程审批功能
+ 
+图5-5 待办任务功能
+ 
+图5-6 发起申请功能
+（4）物资管理实现类：
+@RestController
+@RequestMapping("/api/material")
+@Tag(name = "Material Management", description = "")
+public class MaterialController {
+
+    @Autowired
+    private MaterialService materialService;
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @GetMapping("/list")
+    @Operation(summary = "Get material list")
+    public Result<List<OaMaterial>> getMaterialList() {
+        return Result.success(materialService.getMaterialList());
+    }
+
+    @PostMapping("/apply")
+    @Operation(summary = "Apply for material")
+    public Result<String> applyMaterial(@RequestBody OaMatApply apply, HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String empId = jwtUtil.extractUserId(token);
+        apply.setEmpId(empId);
+        
+        materialService.applyMaterial(apply);
+        return Result.success("Application submitted");
+    }
+
+    @GetMapping("/my-applies")
+    @Operation(summary = "Get my applications")
+    public Result<List<OaMatApply>> getMyApplies(HttpServletRequest request) {
+        String token = request.getHeader("Authorization").substring(7);
+        String empId = jwtUtil.extractUserId(token);
+        return Result.success(materialService.getMyApplies(empId));
+    }
+}
+ 
+图5-7 物资管理功能
+ 
+图5-8 物资申领功能
+（5）工作台仪表盘功能：
+ 
+图5-9 工作台仪表盘
+6 总结与展望
+在 Java Web 综合课程设计过程中，我们学习并实践了从前端到后端的完整开发流程，涵盖了 Web 开发的各个方面。从项目需求分析、架构设计、技术选型、数据库设计，到实际的编码、调试和部署，这一过程中涉及了多个技术栈和工具的使用，目的是培养学生全面的 Java Web 开发能力。以下是我对这门课程设计的总结：
+在课程初期，我们首先进行了项目的需求分析，明确了项目的目标与功能。通过对企业OA办公系统的调研，理解了用户的需求，并据此设计了系统的功能模块。项目包括考勤管理、流程审批、会议协作、资产物资、行政管理、人力资源等模块，涵盖了企业日常办公的主要场景。此阶段强调了需求文档的重要性，需求文档不仅为后续的开发提供了指导，还帮助我们合理分配任务。
+本课程的重点之一是选择适合的技术栈。在选择 Java Web 开发框架时，我们根据项目的规模、功能需求和团队的技术背景，决定使用 Spring MVC 来处理 Web 层的请求，MyBatis-Plus 来进行数据库的交互，JWT实现用户身份认证。前端采用Vue 3配合Element Plus组件库，实现了现代化的单页面应用。在架构设计上，我们遵循了前后端分离的架构模式，后端采用分层架构包括表示层（Controller）、业务层（Service）、数据访问层（Mapper），并考虑了代码的高内聚低耦合。数据库设计方面，我们根据功能需求设计了数据库表，创建了与之对应的实体类和映射关系，并实现了视图、触发器和存储过程等高级数据库特性。
+前端部分，我们使用了Vue 3框架结合Element Plus组件库构建用户界面，通过Vue Router实现路由管理，使用Axios进行HTTP请求，并通过ECharts实现数据可视化图表。后端开发使用了Spring MVC构建RESTful API，结合MyBatis-Plus实现数据库操作，通过JWT实现无状态的用户认证。数据库设计过程中，我们结合实体类与数据库表进行映射，合理设计了表的结构和关系。通过MyBatis-Plus等ORM框架，我们实现了数据的持久化。数据库的设计强调了规范性，如主键的设置、字段的约束、数据一致性等问题。通过事务管理，保证了数据的可靠性和一致性。
+通过这门课程设计，我不仅掌握了 Java Web 开发的基础技能，还学到了团队合作与项目管理的能力。以下是我在课程中获得的一些主要收获：
+通过项目实践，我更加深入地了解了 Java Web 开发中常用的框架和技术，如 Spring MVC、MyBatis-Plus、Vue 3、Element Plus等，并且在实际开发中使用这些技术进行模块化开发。
+在开发过程中，遇到了许多技术难题，比如前后端跨域问题、JWT认证机制、数据库设计优化等。通过查阅资料、团队讨论和多次尝试，我学会了如何在实际开发中快速定位并解决问题。
+本次课程设计让我深刻体会到前后端分离架构的优势，前端专注于用户界面和交互体验，后端专注于业务逻辑和数据处理，通过RESTful API进行通信，提高了开发效率和代码可维护性。
+我们按照实际的开发流程进行设计与开发，从需求分析到系统设计，再到编码实现、测试和部署。这个过程让我对整个项目生命周期有了更清晰的认识。
+在课程设计结束后，回顾整个过程，我认为自己在技术上取得了很大的进步，但仍然有许多方面需要进一步提升。未来 Java Web 开发的方向将继续朝着以下几个方向发展：
+随着业务复杂度的提升，传统的单体架构越来越难以应对。在未来的 Java Web 项目中，微服务架构将成为一种重要的选择。Spring Cloud 和 Kubernetes 等技术将被广泛应用，帮助开发者更好地实现服务的拆分与独立部署。
+随着前端技术的不断进步，前后端分离的架构已成为 Web 开发的主流。在未来的项目中，使用 React、Vue.js 等现代前端框架，结合 Spring Boot 提供 RESTful API，将能够更加高效地进行前后端分离开发。同时，响应式编程和异步处理（如 Spring WebFlux）也将成为高性能应用的关键技术。
+云计算与 DevOps 的兴起使得 Java Web 项目逐步向云原生架构发展。容器化技术（如 Docker）和容器编排工具（如 Kubernetes）将成为部署的主流方式，同时，CI/CD 流水线将大大提升项目的开发和部署效率。
+随着 AI 和大数据技术的发展，Java Web 应用将更多地与这些技术相结合。例如，通过集成机器学习模型来进行数据预测，或者实现数据可视化、实时流处理等功能。
+在信息安全日益重要的今天，Java Web 开发中的安全性问题将更加受到重视。加强对 Web 应用安全（如 XSS、CSRF、SQL 注入等）的防护，将成为开发中的重要任务。
+随着应用的用户量和数据量的不断增加，性能优化将成为 Java Web 开发中的关键挑战。从数据库优化、缓存策略（如 Redis）、负载均衡、异步处理等方面入手，提升系统的并发性能和响应速度。
+参考文献
+[1]田玉倩,张文华.SQL Server 2008数据库完整性的应用探索[J].中外企业家,2020(14):135.
+[2]谌林,郑泓楠.分布式数据库查询处理和优化算法[J].中外企业家,2020(15):145.
+[3]方木云,赵长鲜,张祝梦.两种非匀质Excel表转换成关系数据库表的方法[J].软件工程,2020,23(05):31-34.
+[4]熊光华.计算机数据库系统在企业管理中的应用[J].计算机产品与流通,2020(05):14.
+[5]张玮.探析计算机网络数据库中的安全管理技术[J].计算机产品与流通,2020(05):40+78.
+[6]李明.基于Spring MVC的企业级Web应用开发研究[J].软件导刊,2021(03):56-60.
+[7]王强,刘洋.Vue.js前端框架在企业应用中的实践[J].计算机应用与软件,2021(08):112-118.
+
+班级	软件23-15	姓名	王佳兴	学号	2320011519
+成 绩 评 定
+
+
+实
+
+践
+
+表
+
+现
+
+评
+
+语
+
+
+	  在实践项目中，学生们展现出了极为令人瞩目的积极性与热情，他们对软件项目全心投入，不仅在时间与精力上慷慨奉献，更以实际行动诠释了对项目目标的深刻理解与执着追求。学生们主动融入团队，积极沟通，面对挑战时能够携手合作，共同寻找解决方案，展现了卓越的团队协作精神。在专业技能方面，学生们无疑是出类拔萃的。他们扎实地掌握了专业知识，并能灵活运用所学理论与工具，有效攻克项目中的技术难关，体现了深厚的专业素养与实践能力。编码的精准、测试的严谨以及问题解决的高效，无一不彰显着他们在软件开发领域的深厚功底。尤为值得一提的是，学生们在项目管理与团队协作上的表现同样出色。他们准时参加所有项目会议与讨论，展现出优秀的时间管理与任务执行能力，确保了项目进度的顺利推进。高出勤率与积极参与，不仅是他们对项目高度责任感的体现，也是对敬业精神的最佳诠释。最终成果方面，学生们的实践项目不仅达到了预期目标，更在多个维度上超越了既定标准，开发出功能全面、稳定可靠的软件应用，充分证明了他们的实践创新能力与项目执行能力。在成果展示与答辩环节，学生们以专业的态度、清晰的逻辑和深刻的见解，进一步赢得了评审的高度评价。
+指导教师签字： 
+
+2026 1  月 10  日
+成
+绩	
+备
+注	

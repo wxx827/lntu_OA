@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oa.module.attendance.mapper.OaAttendanceMapper">
+    
+    <resultMap id="BaseResultMap" type="com.oa.module.attendance.entity.OaAttendance">
+        <id column="ATTENDANCE_ID" property="attendanceId"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="WORK_DATE" property="workDate"/>
+        <result column="CLOCK_IN_TIME" property="clockInTime"/>
+        <result column="CLOCK_OUT_TIME" property="clockOutTime"/>
+        <result column="CLOCK_IN_LOCATION" property="clockInLocation"/>
+        <result column="CLOCK_OUT_LOCATION" property="clockOutLocation"/>
+        <result column="STATUS" property="status"/>
+        <result column="WORK_HOURS" property="workHours"/>
+        <result column="IS_LATE" property="isLate"/>
+        <result column="IS_EARLY_LEAVE" property="isEarlyLeave"/>
+        <result column="REMARK" property="remark"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+    </resultMap>
+    
+    <select id="selectByUserIdAndDate" resultMap="BaseResultMap">
+        SELECT * FROM OA_ATTENDANCE 
+        WHERE USER_ID = #{userId} AND WORK_DATE = #{workDate}
+    </select>
+    
+    <select id="selectByUserIdAndDateRange" resultMap="BaseResultMap">
+        SELECT * FROM OA_ATTENDANCE 
+        WHERE USER_ID = #{userId} 
+        AND WORK_DATE BETWEEN #{startDate} AND #{endDate}
+        ORDER BY WORK_DATE DESC
+    </select>
+    
+    <select id="countLateByUserIdAndMonth" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM OA_ATTENDANCE 
+        WHERE USER_ID = #{userId} 
+        AND TO_CHAR(WORK_DATE, 'YYYY-MM') = #{yearMonth}
+        AND IS_LATE = 1
+    </select>
+    
+    <select id="countEarlyLeaveByUserIdAndMonth" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM OA_ATTENDANCE 
+        WHERE USER_ID = #{userId} 
+        AND TO_CHAR(WORK_DATE, 'YYYY-MM') = #{yearMonth}
+        AND IS_EARLY_LEAVE = 1
+    </select>
+    
+    <select id="hasTodayAttendance" resultType="java.lang.Boolean">
+        SELECT CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END
+        FROM OA_ATTENDANCE 
+        WHERE USER_ID = #{userId} 
+        AND WORK_DATE = TRUNC(SYSDATE)
+    </select>
+    
+    <select id="countTodayAttendanceByDept" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT a.USER_ID)
+        FROM OA_ATTENDANCE a
+        INNER JOIN OA_EMPLOYEE_PROFILE ep ON a.USER_ID = ep.USER_ID
+        WHERE ep.DEPT_ID = #{deptId}
+        AND a.WORK_DATE = TRUNC(SYSDATE)
+        AND a.CLOCK_IN_TIME IS NOT NULL
+    </select>
+    
+</mapper>

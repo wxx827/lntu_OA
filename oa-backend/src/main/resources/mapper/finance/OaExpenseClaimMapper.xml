@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oa.module.finance.mapper.OaExpenseClaimMapper">
+    
+    <select id="selectClaimListWithDetails" resultType="com.oa.module.finance.entity.OaExpenseClaim">
+        SELECT ec.*, u.USERNAME as USER_NAME, et.TYPE_NAME as EXPENSE_TYPE_NAME, 
+               au.USERNAME as APPROVER_NAME
+        FROM OA_EXPENSE_CLAIM ec
+        LEFT JOIN SYS_USER u ON ec.USER_ID = u.USER_ID
+        LEFT JOIN OA_EXPENSE_TYPE et ON ec.EXPENSE_TYPE_ID = et.TYPE_ID
+        LEFT JOIN SYS_USER au ON ec.APPROVER_ID = au.USER_ID
+        ORDER BY ec.CREATE_TIME DESC
+    </select>
+    
+    <select id="selectByUserId" resultType="com.oa.module.finance.entity.OaExpenseClaim">
+        SELECT ec.*, et.TYPE_NAME as EXPENSE_TYPE_NAME
+        FROM OA_EXPENSE_CLAIM ec
+        LEFT JOIN OA_EXPENSE_TYPE et ON ec.EXPENSE_TYPE_ID = et.TYPE_ID
+        WHERE ec.USER_ID = #{userId}
+        ORDER BY ec.CREATE_TIME DESC
+    </select>
+    
+    <select id="selectPendingClaims" resultType="com.oa.module.finance.entity.OaExpenseClaim">
+        SELECT ec.*, u.USERNAME as USER_NAME, et.TYPE_NAME as EXPENSE_TYPE_NAME
+        FROM OA_EXPENSE_CLAIM ec
+        LEFT JOIN SYS_USER u ON ec.USER_ID = u.USER_ID
+        LEFT JOIN OA_EXPENSE_TYPE et ON ec.EXPENSE_TYPE_ID = et.TYPE_ID
+        WHERE ec.STATUS = 'PENDING'
+        ORDER BY ec.CREATE_TIME ASC
+    </select>
+    
+    <select id="selectByClaimNo" resultType="com.oa.module.finance.entity.OaExpenseClaim">
+        SELECT * FROM OA_EXPENSE_CLAIM 
+        WHERE CLAIM_NO = #{claimNo}
+    </select>
+    
+</mapper>

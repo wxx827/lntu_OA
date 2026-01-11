@@ -1,0 +1,178 @@
+-- =======================================================
+-- OA System Database Schema (MySQL)
+-- Converted from Oracle schema.sql
+-- Version: 4.0 FINAL - MySQL Edition
+-- =======================================================
+
+-- 1. Cleanup (Optional: uncomment if re-running)
+-- DROP TABLE IF EXISTS OA_MAT_APPLY;
+-- DROP TABLE IF EXISTS OA_MATERIAL;
+-- DROP TABLE IF EXISTS OA_MEETING_BOOK;
+-- DROP TABLE IF EXISTS OA_MEETING_ROOM;
+-- DROP TABLE IF EXISTS SYS_EMPLOYEE;
+-- DROP TABLE IF EXISTS SYS_POSITION;
+-- DROP TABLE IF EXISTS SYS_DEPARTMENT;
+
+-- =======================================================
+-- 2. Core Tables
+-- =======================================================
+
+-- 2.1 Department Table
+CREATE TABLE SYS_DEPARTMENT (
+    DEP_ID      VARCHAR(32) PRIMARY KEY,
+    DEP_NAME    VARCHAR(100) NOT NULL,
+    DEP_DESC    VARCHAR(200)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.2 Position Table
+CREATE TABLE SYS_POSITION (
+    POS_ID      VARCHAR(32) PRIMARY KEY,
+    POS_NAME    VARCHAR(50) NOT NULL,
+    POS_LEVEL   INT         -- Level for permission check
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.3 Employee Table
+CREATE TABLE SYS_EMPLOYEE (
+    EMP_ID      VARCHAR(32) PRIMARY KEY,
+    EMP_NAME    VARCHAR(50) NOT NULL,
+    PASSWORD    VARCHAR(100) NOT NULL, -- MD5 Encrypted
+    ROLE        VARCHAR(20) DEFAULT 'EMPLOYEE', -- ADMIN, EMPLOYEE, INTERN
+    SEX         VARCHAR(10),
+    TEL         VARCHAR(20),
+    EMAIL       VARCHAR(50),
+    DEP_ID      VARCHAR(32),
+    POS_ID      VARCHAR(32),
+    CONSTRAINT FK_EMP_DEP FOREIGN KEY (DEP_ID) REFERENCES SYS_DEPARTMENT(DEP_ID),
+    CONSTRAINT FK_EMP_POS FOREIGN KEY (POS_ID) REFERENCES SYS_POSITION(POS_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.4 Meeting Room Table
+CREATE TABLE OA_MEETING_ROOM (
+    ROOM_ID     VARCHAR(32) PRIMARY KEY,
+    ROOM_NAME   VARCHAR(100) NOT NULL,
+    LOCATION    VARCHAR(100),
+    CAPACITY    INT,
+    HAS_MEDIA   INT DEFAULT 0, -- 0:No, 1:Yes
+    STATUS      INT DEFAULT 0  -- 0:Free, 1:Occupied, 2:Maintenance
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.5 Meeting Booking Table
+CREATE TABLE OA_MEETING_BOOK (
+    BOOK_ID     VARCHAR(32) PRIMARY KEY,
+    ROOM_ID     VARCHAR(32) NOT NULL,
+    EMP_ID      VARCHAR(32) NOT NULL,
+    START_TIME  DATETIME NOT NULL,
+    END_TIME    DATETIME NOT NULL,
+    TOPIC       VARCHAR(200),
+    STATUS      INT DEFAULT 0, -- 0:Pending, 1:Approved, 2:Rejected
+    CREATE_TIME DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT FK_BOOK_ROOM FOREIGN KEY (ROOM_ID) REFERENCES OA_MEETING_ROOM(ROOM_ID),
+    CONSTRAINT FK_BOOK_EMP FOREIGN KEY (EMP_ID) REFERENCES SYS_EMPLOYEE(EMP_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.6 Material Table
+CREATE TABLE OA_MATERIAL (
+    MAT_ID      VARCHAR(32) PRIMARY KEY,
+    MAT_NAME    VARCHAR(100) NOT NULL,
+    SPEC        VARCHAR(50),
+    PRICE       DECIMAL(10, 2),
+    STOCK       INT DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2.7 Material Apply Table
+CREATE TABLE OA_MAT_APPLY (
+    APPLY_ID    VARCHAR(32) PRIMARY KEY,
+    MAT_ID      VARCHAR(32) NOT NULL,
+    EMP_ID      VARCHAR(32) NOT NULL,
+    COUNT       INT NOT NULL,
+    REASON      VARCHAR(200),
+    APPLY_DATE  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    STATE       INT DEFAULT 0, -- 0:Pending, 1:Approved/Distributed, 2:Rejected
+    CONSTRAINT FK_APPLY_MAT FOREIGN KEY (MAT_ID) REFERENCES OA_MATERIAL(MAT_ID),
+    CONSTRAINT FK_APPLY_EMP FOREIGN KEY (EMP_ID) REFERENCES SYS_EMPLOYEE(EMP_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- =======================================================
+-- 3. Advanced Features (Course Requirements)
+-- =======================================================
+
+-- 3.1 View: Full Employee Info
+CREATE OR REPLACE VIEW V_EMP_FULL_INFO AS
+SELECT 
+    e.EMP_ID, 
+    e.EMP_NAME, 
+    e.SEX, 
+    e.TEL, 
+    d.DEP_ID, 
+    d.DEP_NAME, 
+    p.POS_ID, 
+    p.POS_NAME
+FROM SYS_EMPLOYEE e
+LEFT JOIN SYS_DEPARTMENT d ON e.DEP_ID = d.DEP_ID
+LEFT JOIN SYS_POSITION p ON e.POS_ID = p.POS_ID;
+
+-- 3.2 Trigger 1: Auto Deduct Stock
+DELIMITER $$
+CREATE TRIGGER TRG_DEDUCT_STOCK
+AFTER UPDATE ON OA_MAT_APPLY
+FOR EACH ROW
+BEGIN
+    IF NEW.STATE = 1 AND OLD.STATE != 1 THEN
+        UPDATE OA_MATERIAL 
+        SET STOCK = STOCK - NEW.COUNT
+        WHERE MAT_ID = NEW.MAT_ID;
+    END IF;
+END$$
+DELIMITER ;
+
+-- 3.3 Trigger 2: Auto Lock Meeting Room
+DELIMITER $$
+CREATE TRIGGER TRG_LOCK_ROOM
+AFTER UPDATE ON OA_MEETING_BOOK
+FOR EACH ROW
+BEGIN
+    IF NEW.STATUS = 1 AND OLD.STATUS != 1 THEN
+        UPDATE OA_MEETING_ROOM 
+        SET STATUS = 1 
+        WHERE ROOM_ID = NEW.ROOM_ID;
+    END IF;
+END$$
+DELIMITER ;
+
+-- 3.4 Stored Procedure: Department Monthly Stats
+DELIMITER $$
+CREATE PROCEDURE SP_DEPT_STATS(
+    IN p_month VARCHAR(7)
+)
+BEGIN
+    SELECT 
+        d.DEP_NAME, 
+        SUM(m.PRICE * a.COUNT) as TOTAL_COST
+    FROM SYS_DEPARTMENT d
+    JOIN SYS_EMPLOYEE e ON d.DEP_ID = e.DEP_ID
+    JOIN OA_MAT_APPLY a ON e.EMP_ID = a.EMP_ID
+    JOIN OA_MATERIAL m ON a.MAT_ID = m.MAT_ID
+    WHERE DATE_FORMAT(a.APPLY_DATE, '%Y-%m') = p_month
+      AND a.STATE = 1
+    GROUP BY d.DEP_NAME;
+END$$
+DELIMITER ;
+
+-- =======================================================
+-- 4. Sample Data
+-- =======================================================
+INSERT INTO SYS_DEPARTMENT VALUES ('D01', 'Tech Dept', 'Technology R&D');
+INSERT INTO SYS_DEPARTMENT VALUES ('D02', 'HR Dept', 'Human Resources');
+
+INSERT INTO SYS_POSITION VALUES ('P01', 'Manager', 10);
+INSERT INTO SYS_POSITION VALUES ('P02', 'Staff', 1);
+
+INSERT INTO SYS_EMPLOYEE VALUES ('E001', 'Admin', 'e10adc3949ba59abbe56e057f20f883e', 'ADMIN', 'Male', '13800138000', 'admin@oa.com', 'D01', 'P01');
+
+INSERT INTO OA_MEETING_ROOM VALUES ('R101', 'Meeting Room A', '1F', 10, 1, 0);
+INSERT INTO OA_MEETING_ROOM VALUES ('R102', 'Meeting Room B', '2F', 20, 1, 0);
+
+INSERT INTO OA_MATERIAL VALUES ('M001', 'A4 Paper', '500 pages/pack', 25.00, 100);
+INSERT INTO OA_MATERIAL VALUES ('M002', 'Pen', 'Black', 2.00, 500);
+
+COMMIT;

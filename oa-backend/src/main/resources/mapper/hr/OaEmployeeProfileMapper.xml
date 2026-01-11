@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oa.module.hr.mapper.OaEmployeeProfileMapper">
+    
+    <select id="selectByUserId" resultType="com.oa.module.hr.entity.OaEmployeeProfile">
+        SELECT * FROM OA_EMPLOYEE_PROFILE 
+        WHERE USER_ID = #{userId}
+    </select>
+    
+    <select id="selectProfileListWithDetails" resultType="com.oa.module.hr.entity.OaEmployeeProfile">
+        SELECT ep.*, u.USERNAME as USER_NAME, d.DEPT_NAME, p.POSITION_NAME
+        FROM OA_EMPLOYEE_PROFILE ep
+        LEFT JOIN SYS_USER u ON ep.USER_ID = u.USER_ID
+        LEFT JOIN OA_DEPARTMENT d ON ep.DEPT_ID = d.DEPT_ID
+        LEFT JOIN OA_POSITION p ON ep.POSITION_ID = p.POSITION_ID
+        ORDER BY ep.CREATE_TIME DESC
+    </select>
+    
+    <select id="selectByDeptId" resultType="com.oa.module.hr.entity.OaEmployeeProfile">
+        SELECT ep.*, u.USERNAME as USER_NAME, p.POSITION_NAME
+        FROM OA_EMPLOYEE_PROFILE ep
+        LEFT JOIN SYS_USER u ON ep.USER_ID = u.USER_ID
+        LEFT JOIN OA_POSITION p ON ep.POSITION_ID = p.POSITION_ID
+        WHERE ep.DEPT_ID = #{deptId}
+        ORDER BY ep.CREATE_TIME
+    </select>
+    
+    <select id="getDepartmentIdByUserId" resultType="java.lang.Long">
+        SELECT DEPT_ID FROM OA_EMPLOYEE_PROFILE 
+        WHERE USER_ID = #{userId}
+    </select>
+    
+    <select id="countByDepartmentId" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM OA_EMPLOYEE_PROFILE 
+        WHERE DEPT_ID = #{deptId}
+    </select>
+    
+</mapper>
