@@ -1,68 +1,31 @@
-# Dependencies
+# Only keep: oa-backend/, oa-frontend/, db/, README.md
+
+# Ignore everything
+*
+
+# Except these folders and files
+!oa-backend/
+!oa-backend/**
+!oa-frontend/
+!oa-frontend/**
+!db/
+!db/**
+!README.md
+!.gitignore
+
+# Still ignore these inside kept folders
 node_modules/
 target/
 *.jar
 *.war
 *.class
-
-# IDE
+*.log
 .idea/
 *.iml
 .vscode/
-*.swp
-*.swo
-
-# Environment
-.env
-*.local
-
-# Logs
-*.log
-logs/
-
-# Build outputs
 dist/
 build/
-out/
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# Uploads
-uploads/
-mysql_data/
-
-# Database
-*.sql.bak
-
-# Sensitive config (use .example templates)
 oa-backend/src/main/resources/jdbc.properties
 oa-backend/src/main/resources/application.yml
-
-# Personal documents
-*.docx
-*.xlsx
-*.xls
-*.txt
-学生提交/
-query
-
-# Development scripts
-*.py
-*.bat
-*.sh
-
-# Backup files
-*.backup
-*.bak
-
-# Unnecessary docs
-codex_prompts.md
-project_requirements.md
-PROJECT_SETUP_GUIDE.md
-DEPLOY_HUAWEICLOUD.md
-OA在线系统_API接口文档.md
-公告管理系统*.md
-公告系统*.md
-OA系统功能细分表.*
